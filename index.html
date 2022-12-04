@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Pico W Portal Manager</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="style.css"/>
+<script src="script.js"></script>
+</head>
+
+<body>
+
+	<div class="centered centered_text animate__animated animate__backInDown" id="IpInputField">
+		<h1 class="inline">Pi Pico W IP:</h1>
+		<input class="inline" id="pico_ip" maxlength="15"></input>
+	</div>
+	
+	<br>
+	
+	<div class="centered animate__animated animate__backInLeft">
+		<h2 class="inline" id="name">PoPEmu</h2>
+		<h2 class="inline"> - </h2>
+		<h3 class="inline" id="version">0.0.0</h3>
+		
+		<div>
+			<h3 class="inline">Download Current Toy:</h3>
+			<select class="inline" id="download_slot_select">
+				<option value="0">Slot 1</option>
+				<option value="1">Slot 2</option>
+				<option value="2">Slot 3</option>
+				<option value="3">Slot 4</option>
+				<option value="4">Slot 5</option>
+				<option value="5">Slot 6</option>
+			</select>
+
+			<button class="inline" onClick="window.open('http://' + PicoIp + '/api/v1/toys?slot_index=' + download_slot_select.value, '_blank');">Download</button>
+		</div>
+
+		<div>
+		<h3 class="inline">Delete Current Toy:</h3>
+			<select class="inline" id="delete_slot_select">
+				<option value="0">Slot 1</option>
+				<option value="1">Slot 2</option>
+				<option value="2">Slot 3</option>
+				<option value="3">Slot 4</option>
+				<option value="4">Slot 5</option>
+				<option value="5">Slot 6</option>
+			</select>
+			<button class="inline" onClick="delete_slot();">Delete</button>
+		</div>
+
+		<div>
+		<h3 class="inline">Send Toy:</h3>
+			<input type="file" id="send_slot_input" accept=".key.dump,.dump,.bin,.sky"></input>
+			<select class="inline" id="send_slot_select">
+				<option value="0">Slot 1</option>
+				<option value="1">Slot 2</option>
+				<option value="2">Slot 3</option>
+				<option value="3">Slot 4</option>
+				<option value="4">Slot 5</option>
+				<option value="5">Slot 6</option>
+			</select>
+			<button class="inline" onClick="send_slot();">Send</button>
+		</div>
+		
+		<div>
+		<h3 class="inline">Reboot:</h3>
+			<select class="inline" id="reboot_select">
+				<option value="NORMAL">Normal</option>
+				<option value="SAFE_MODE">Safe Mode</option>
+				<option value="UF2">Uf2</option>
+			</select>
+			<button class="inline" onClick="reboot_pico();">Reboot</button>
+		</div>
+		
+		<button onclick="window.location.reload();">Refresh</button>
+		
+	</div>
+	
+	<br>
+	
+	<div class="centered animate__animated animate__backInUp" id="DisplaySlots">
+		<h2 class="inline">Portal Of Power -</h2> 
+		<button onClick="get_and_update_slots_info();">Update</button>
+		<div class="slot">
+			<h2 class="inline">Slot 1 - </h2>
+			<img src="img/placeholder.png"></img>
+			<h2 class="inline" id="slot_1_id">ID: 0</h2>
+			<h2 class="inline" id="slot_1_variant">Variant: 0</h2>
+			<h2 class="inline" id="slot_1_status">Status: 0</h2>
+		</div>
+		<br>
+		<div class="slot">
+			<h2 class="inline">Slot 2 - </h2>
+			<img src="img/placeholder.png"></img>
+			<h2 class="inline" id="slot_2_id">ID: 0</h2>
+			<h2 class="inline" id="slot_2_variant">Variant: 0</h2>
+			<h2 class="inline" id="slot_2_status">Status: 0</h2>
+		</div>	
+		<br>
+		<div class="slot">
+			<h2 class="inline">Slot 3 - </h2>
+			<img src="img/placeholder.png"></img>
+			<h2 class="inline" id="slot_3_id">ID: 0</h2>
+			<h2 class="inline" id="slot_3_variant">Variant: 0</h2>
+			<h2 class="inline" id="slot_3_status">Status: 0</h2>
+		</div>
+		<br>
+		<div class="slot">
+			<h2 class="inline">Slot 4 - </h2>
+			<img src="img/placeholder.png"></img>
+			<h2 class="inline" id="slot_4_id">ID: 0</h2>
+			<h2 class="inline" id="slot_4_variant">Variant: 0</h2>
+			<h2 class="inline" id="slot_4_status">Status: 0</h2>
+		</div>	
+		<br>
+		<div class="slot">
+			<h2 class="inline">Slot 5 - </h2>
+			<img src="img/placeholder.png"></img>
+			<h2 class="inline" id="slot_5_id">ID: 0</h2>
+			<h2 class="inline" id="slot_5_variant">Variant: 0</h2>
+			<h2 class="inline" id="slot_5_status">Status: 0</h2>
+		</div>
+		<br>
+		<div class="slot">
+			<h2 class="inline">Slot 6 - </h2>
+			<img src="img/placeholder.png"></img>
+			<h2 class="inline" id="slot_6_id">ID: 0</h2>
+			<h2 class="inline" id="slot_6_variant">Variant: 0</h2>
+			<h2 class="inline" id="slot_6_status">Status: 0</h2>
+		</div>	
+	</div>
+</body>
+
+</html>

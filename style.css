@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Mono&display=swap');
+
+::selection {
+  background-color: #00;
+  color: #00;
+}
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+	padding: 10px;
+}
+
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	padding: 10px;
+}
+
+h3 {
+	font-family: 'Open Sans', sans-serif;
+	padding: 10px;
+}
+
+body {
+	background-color: #cccccc;
+	
+}
+
+img {
+	float: right;
+	padding: 10px;
+	border-radius: 25%;
+	width: 75px;
+}
+
+div.slot {
+	background-color: #cccccc;
+	border-radius: 10px;
+}
+
+.centered {
+	margin: auto;
+	padding: 10px;
+	width: 50%;
+	background-color: white;
+	border-radius: 20px 10px 20px 10px;
+}
+
+.centered_text {
+	text-align: center;
+}
+
+.inline {
+	display: inline-block;
+}
+
+#pico_ip {
+	height: 20px;
+	padding-top: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: 1.5px solid #cccccc;
+}
+
+#pico_ip:hover {
+	border: 2px solid #cccccc;
+}
+
+button {
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+	border: none;
+	height: 30px;
+	width: 100px;
+}
+
+select {
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+	border: none;
+	height: 30px;
+	width: 100px;
+}
+
+input.send_slot_input {
+	color: white;
+	text-decoration: none;
+	border-radius: 10px;	
+}
+
+input#send_slot_input {
+	font-size: 16px;
+}
+
+/* Mobile Devices */
+@media only screen and (max-width: 1080px) {
+	.centered {
+		width: 90%;
+	}
+}
