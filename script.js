@@ -145,13 +145,6 @@ window.onload = function () {
     document.getElementById("pico_ip").addEventListener('change', update_pico_ver());
 }
 
-function req_portal_info() {
-	fetch("http://" + PicoIp + "/api/v1/toys", {
-	"method": "DELETE",
-    "mode": "cors"
-    });
-}
-
 function delete_slot() {
 	fetch("http://" + PicoIp + "/api/v1/toys?slot_index=" + document.getElementById("delete_slot_select").value, {
 	"method": "DELETE",
